@@ -1,0 +1,108 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Listing Container */
+  .listing {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .listing:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Listing Photo */
+  .listing-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  /* Listing Heading */
+  .listing-heading {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    padding: 20px 20px 10px 20px;
+    margin: 0;
+  }
+  
+  /* Listing Location */
+  .listing-location {
+    font-size: 16px;
+    color: #7f8c8d;
+    padding: 0 20px 20px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .listing-location::before {
+    content: url("/location-pin.svg");
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Learn More Link */
+  .listing a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 20px 20px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    background: rgba(var(--primary-color), 0.1);
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .listing a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  .listing a::after {
+    content: "\203A";
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .listing-heading {
+      font-size: 20px;
+    }
+  
+    .listing-location {
+      font-size: 14px;
+    }
+  
+    .listing a {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .listing-heading {
+      font-size: 18px;
+    }
+  
+    .listing-location {
+      font-size: 12px;
+    }
+  
+    .listing a {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }

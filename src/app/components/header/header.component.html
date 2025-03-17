@@ -1,1 +1,16 @@
-<p>header works!</p>
+<header>
+  <img src="logo.svg" alt="nimic">
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button class="menu-btn" mat-menu-item [routerLink]="['/']" routerLinkActive="router-link-active">
+      <span>Home</span>
+    </button>
+    <button class="menu-btn" mat-menu-item [routerLink]="['/about']" routerLinkActive="router-link-active">
+      <span>About</span>
+    </button>
+  </mat-menu>
+</header>

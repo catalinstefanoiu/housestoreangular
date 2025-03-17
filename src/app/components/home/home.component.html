@@ -1,1 +1,16 @@
-<p>home works!</p>
+<section>
+    <form class="input-form">
+      <div class="input-container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Filter by city</mat-label>
+          <input matInput placeholder="Enter city" #filter>
+        </mat-form-field>
+        <button mat-stroked-button (click)="filterResults(filter.value)">Search</button>
+      </div>
+    </form>
+  </section>
+  <section class="results">
+    <app-housing-location *ngFor="let housingLocation of filteredLocationList" 
+      [housingLocation]="housingLocation">
+    </app-housing-location>
+  </section>

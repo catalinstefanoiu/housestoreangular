@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Container */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Input Form */
+.input-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.input-container {
+  display: flex;
+  gap: 15px;
+  align-items: stretch; /* Stretch items to full height */
+  justify-content: center;
+}
+
+mat-form-field {
+  width: 50%;
+  font-size: 16px;
+}
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 0;
+  height: 100%; /* Match height */
+}
+
+mat-form-field .mat-form-field-outline {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+mat-form-field .mat-form-field-outline-start,
+mat-form-field .mat-form-field-outline-gap,
+mat-form-field .mat-form-field-outline-end {
+  border: none;
+}
+
+mat-form-field .mat-input-element {
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+mat-form-field .mat-form-field-label {
+  color: #7f8c8d;
+}
+
+/* Search Button */
+button[mat-stroked-button] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: 56px; /* Matches input height */
+  min-width: 120px;
+}
+
+button[mat-stroked-button]:hover {
+  background: var(--secondary-color);
+}
+
+button[mat-stroked-button] mat-icon {
+  font-size: 20px;
+}
+
+/* Results Section */
+.results {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  mat-form-field {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  button[mat-stroked-button] {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+}
