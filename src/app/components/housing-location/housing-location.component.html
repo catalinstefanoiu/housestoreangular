@@ -1,9 +1,13 @@
 <section class="listing">
+   <!-- Display housing location photo -->
     <img class="listing-photo" [src]="housingLocation.photo" 
     alt="Exterior photo of {{housingLocation.name}}">
+     <!-- Display housing location name -->
     <h2 class="listing-heading">{{ housingLocation.name }}</h2>
+    <!-- Display housing location city and state -->
     <p class="listing-location">{{ housingLocation.city }},
       {{housingLocation.state}}
     </p>
+     <!-- Link to details page for this housing location -->
   <a [routerLink]="['/details', housingLocation.docId]"> Learn More </a>
   </section>

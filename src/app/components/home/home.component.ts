@@ -19,10 +19,10 @@ import { RouterModule } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
-  housingLocationList: HousingLocation[] = [];
-  housingService: HousingService = inject (HousingService);
-  filteredLocationList:HousingLocation[] = [];
-filter: any;
+  housingLocationList: HousingLocation[] = []; // List of all housing locations
+  housingService: HousingService = inject (HousingService); // Inject HousingService
+  filteredLocationList:HousingLocation[] = []; // List of filtered housing location
+  filter: any; // Placeholder for filter input (not used directly)
 
   constructor() {
     
@@ -30,15 +30,16 @@ filter: any;
 
   ngOnInit(): void {
     console.log('HomeComponent::onInit');
+    // Fetch all housing locations from the service
     this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
-      this.housingLocationList = housingLocationList;
-      this.filteredLocationList = housingLocationList;
+      this.housingLocationList = housingLocationList; // Assign fetched data
+      this.filteredLocationList = housingLocationList; // Initialize filtered list
     });
   }
 
   filterResults(text: string) {
     if (!text) this.filteredLocationList = this.housingLocationList; 
-      
+    // Filter locations based on city name
       this.filteredLocationList = this.housingLocationList.filter(
       housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
     );

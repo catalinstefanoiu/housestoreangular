@@ -1,5 +1,7 @@
 import { DocumentReference } from "@angular/fire/firestore";
 
+/*Defines the structure of a housing location object*/ 
+
 export interface HousingLocation {
     docId: string;
     refId: DocumentReference;

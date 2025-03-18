@@ -8,9 +8,13 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    provideAnimations(),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideRouter(routes), // Registers app routes.
+    provideAnimations(), // Enables Angular animations.
+    provideFirebaseApp(() => initializeApp(environment.firebase)), // Initializes Firebase.
+    provideFirestore(() => getFirestore()) // Configures Firestore.
   ]
 };
+/*
+provideFirebaseApp() - Initializes Firebase using the settings from environment.ts.
+provideFirestore() - Makes Firestore available for database operations. 
+ */
