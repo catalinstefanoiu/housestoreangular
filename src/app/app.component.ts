@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { RouterModule } from '@angular/router';
+import { HousingService } from './housing.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,10 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'housestoreangular';
+
+  constructor(private housingService: HousingService) {}
+
+  ngOnInit(): void {
+  //  this.housingService.addInitialHousingData(); // Only call once to avoid duplicates
+  }
 }
